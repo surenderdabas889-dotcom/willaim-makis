@@ -1,0 +1,220 @@
+.hero {
+    background: linear-gradient(135deg, #0c0f33, #16204a);
+    color: white;
+    text-align: center;
+    padding: 90px 20px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    font-weight: 800;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-top: 12px;
+    opacity: .85;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 40px;
+}
+
+.protocol-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.card-header {
+    background: linear-gradient(135deg, #0d1e50, #162c75);
+    padding: 25px;
+    border-radius: 16px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.card-header h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.card-header p {
+    margin-top: 8px;
+    font-size: 15px;
+    opacity: 0.9;
+}
+
+.card-desc {
+    color: #555;
+    font-size: 15px;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.card-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f4f6fa;
+    padding: 12px 18px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.duration i {
+    margin-right: 6px;
+    color: #555;
+}
+
+.level {
+    padding: 6px 14px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.level.easy { background: #d8f8df; color: #0d8928; }
+.level.moderate { background: #ffecc7; color: #a76b00; }
+.level.advanced { background: #ffd4d8; color: #b11226; }
+
+.price {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0d1e50;
+    margin-bottom: 20px;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+.details-btn,
+.add-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.details-btn {
+    background: #f5f7fa;
+    color: #0d1e50;
+}
+
+.add-btn {
+    background: #0d1e50;
+    color: white;
+}
+
+/* --- Modal Overlay --- */
+#protocolModal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    inset: 0; /* top:0; right:0; bottom:0; left:0 */
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+/* --- Modal Content --- */
+#protocolModal > div {
+    background: #fff;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 100%;
+    padding: 30px 25px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-family: 'Arial', sans-serif;
+    animation: slideIn 0.3s ease;
+}
+
+/* --- Close Button --- */
+#protocolModal #closeModal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+#protocolModal #closeModal:hover {
+    color: #001b4e;
+}
+
+/* --- Modal Title --- */
+#protocolModal #modalTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #001b4e;
+    margin-bottom: 10px;
+}
+
+/* --- Modal Description --- */
+#protocolModal #modalDescription {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #444;
+}
+
+/* --- Modal Price --- */
+#protocolModal #modalPrice {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #001b4e;
+    margin-top: 10px;
+}
+
+/* --- Add to Cart Button --- */
+#protocolModal #addModalBtn {
+    background-color: #001b4e;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    margin-top: 15px;
+}
+
+#protocolModal #addModalBtn:hover {
+    background-color: #003080;
+    transform: translateY(-2px);
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes slideIn {
+    from {transform: translateY(-20px); opacity:0;}
+    to {transform: translateY(0); opacity:1;}
+}

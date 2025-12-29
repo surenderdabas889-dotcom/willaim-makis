@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancer Support Products</title>
+    <link rel="stylesheet" href="product-page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="navbar"></div>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1>Cancer Support Products</h1>
+        <p>Evidence-based supplements and natural products to support your wellness journey</p>
+    </section>
+
+    <!-- FILTER BAR -->
+    <div class="filter-bar">
+        <div class="filter-left">
+            <button class="filter-btn active">All Products</button>
+            <button class="filter-btn">In Stock</button>
+            <button class="filter-btn">Featured</button>
+            <button class="filter-btn">Out of Stock</button>
+        </div>
+        <div class="product-count">
+            <i class="fa-solid fa-box"></i> <span id="productCount">0</span> Products
+        </div>
+    </div>
+
+    <!-- PRODUCT GRID -->
+    <section class="product-grid"></section>
+
+    <!-- Pagination Container -->
+    <div class="pagination-container">
+        <button id="prevBtn" class="page-btn prev">&lt; Previous</button>
+        <div id="pageNumbers"></div>
+        <button id="nextBtn" class="page-btn next">Next &gt;</button>
+        <span id="pageInfo" class="page-info"></span>
+    </div>
+
+    <!-- Floating Cart -->
+    <div id="floatingCart" style="position: fixed; bottom: 20px; right: 20px; background: #001b4e; color: white; padding: 12px 18px; border-radius: 12px; cursor: pointer; z-index: 999;"
+        onclick="goToCheckout()">
+        🛒 <span id="cartCount">0</span>
+    </div>
+
+    <!-- Product Modal -->
+    <div id="productModal" class="modal" style="display:none; position: fixed; inset:0; background: rgba(0,0,0,0.7); justify-content: center; align-items: center; z-index: 1000;">
+        <div class="modal-content" style="background:white; border-radius:12px; padding: 20px; max-width: 500px; width: 90%;">
+            <span class="close" onclick="closeProductModal()" style="cursor:pointer; float:right; font-size:24px;">&times;</span>
+            <img id="modalImage" src="" style="width:100%; border-radius:8px; margin-bottom:12px;">
+            <h2 id="modalTitle"></h2>
+            <p id="modalPrice" style="font-weight:bold;"></p>
+            <p id="modalDescription"></p>
+            <button onclick="addToCart(currentModalItem)" style="background:#001b4e; color:white; padding:10px 15px; border:none; border-radius:8px; cursor:pointer;">Add to Cart</button>
+        </div>
+    </div>
+
+    <script src="product-page.js"></script>
+</body>
+</html>

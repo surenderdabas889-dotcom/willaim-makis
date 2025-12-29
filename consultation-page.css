@@ -1,0 +1,390 @@
+.hero {
+    background: linear-gradient(135deg, #0c0f33, #16204a);
+    color: white;
+    text-align: center;
+    padding: 90px 20px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    font-weight: 800;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-top: 12px;
+    opacity: .85;
+}
+
+.consultation-card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 40px;
+}
+
+.consult-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.1);
+    padding-bottom: 25px;
+}
+
+.top-section {
+    background: linear-gradient(135deg, #0d1e50, #162c75);
+    padding: 30px 25px 40px;
+    text-align: center;
+    position: relative;
+}
+
+.popular-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #ffb400;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: white;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.icon-box {
+    width: 100%;
+    height: 80px;
+    background: rgba(255,255,255,0.18);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.icon-box i {
+    color: white;
+    font-size: 34px;
+}
+
+.top-section h2 {
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: rgba(255,255,255,0.85);
+    font-size: 15px;
+}
+
+.description {
+    padding: 25px;
+    color: #555;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.info-box {
+    background: #f4f6fa;
+    margin: 0 25px 20px;
+    padding: 15px 20px;
+    border-radius: 12px;
+}
+
+.info-box div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #444;
+}
+
+.info-box div:last-child {
+    margin-bottom: 0;
+}
+
+.info-box i {
+    margin-right: 6px;
+}
+
+.info-box strong {
+    color: #0d1e50;
+}
+
+.price {
+    text-align: center;
+    margin: 15px 0;
+    font-size: 28px;
+    color: #0d1e50;
+    font-weight: 800;
+}
+
+.bottom-buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 25px;
+}
+
+.details-btn,
+.add-btn {
+    width: 48%;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.details-btn {
+    background: #f5f7fa;
+    color: #0d1e50;
+}
+
+.add-btn {
+    background: #0d1e50;
+    color: white;
+}
+
+/* Same card style from previous items */
+.consult-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.1);
+    padding-bottom: 25px;
+}
+
+/* Top blue gradient */
+.top-section {
+    background: linear-gradient(135deg, #0d1e50, #162c75);
+    padding: 30px 25px 40px;
+    text-align: center;
+    position: relative;
+}
+
+/* Popular tag (yellow badge) */
+.popular-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #ffb400;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: white;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Icon box */
+.icon-box {
+    width: 100%;
+    height: 80px;
+    background: rgba(255,255,255,0.18);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.icon-box i {
+    color: white;
+    font-size: 34px;
+}
+
+/* Title */
+.top-section h2 {
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+/* Subtitle */
+.subtitle {
+    color: rgba(255,255,255,0.85);
+    font-size: 15px;
+}
+
+/* Description */
+.description {
+    padding: 25px;
+    color: #555;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Info box (Duration + Delivery) */
+.info-box {
+    background: #f4f6fa;
+    margin: 0 25px 20px;
+    padding: 15px 20px;
+    border-radius: 12px;
+}
+
+.info-box div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #444;
+}
+
+.info-box div:last-child {
+    margin-bottom: 0;
+}
+
+.info-box strong {
+    color: #0d1e50;
+}
+
+/* Price */
+.price {
+    text-align: center;
+    margin: 15px 0 5px;
+    font-size: 28px;
+    color: #0d1e50;
+    font-weight: 800;
+}
+
+/* Old price */
+.old-price {
+    font-size: 18px;
+    color: #999;
+    text-decoration: line-through;
+    margin-left: 10px;
+}
+
+/* Savings (green text) */
+.savings {
+    text-align: center;
+    color: #0da950;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Buttons */
+.bottom-buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 25px;
+}
+
+.details-btn,
+.add-btn {
+    width: 48%;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.details-btn {
+    background: #f5f7fa;
+    color: #0d1e50;
+}
+
+.add-btn {
+    background: #0d1e50;
+    color: white;
+}
+
+/* ===== MODAL ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+}
+
+.modal-box {
+  background: #fff;
+  max-width: 450px;
+  width: 90%;
+  padding: 25px;
+  border-radius: 12px;
+  position: relative;
+  animation: scaleIn .25s ease;
+}
+
+@keyframes scaleIn {
+  from { transform: scale(.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.modal-close {
+  position: absolute;
+  right: 18px;
+  top: 12px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.modal-info {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.modal-info li {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.modal-add-btn {
+  width: 100%;
+  padding: 12px;
+  background: #001b4e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* ===== CART FLOATER ===== */
+#cartFloater {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  background: #001b4e;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 22px;
+  z-index: 4000;
+}
+
+#cartCount {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: red;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

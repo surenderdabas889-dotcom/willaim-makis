@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="checkout.css">
+  </head>
+  <body>
+
+    <h2>Checkout</h2>
+
+    <!-- Cart Summary -->
+    <div id="cartSummary" class="cart-summary">
+      <p>Subtotal: <span id="cartSubtotal">$0.00</span></p>
+      <p>Tax (7%): <span id="cartTax">$0.00</span></p>
+      <h3>Total: <span id="cartTotal">$0.00</span></h3>
+    </div>
+
+    <div class="checkout-container">
+      <form class="checkout-box" id="checkoutForm" action="https://formsubmit.co/hopethompson038@gmail.com"
+  method="POST">
+
+        <h2>Checkout</h2>
+        <p class="subtitle">
+          Please provide your details to complete your request.
+        </p>
+
+        <input type="text" name="full_name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="tel" name="phone" placeholder="Phone Number">
+
+        <textarea name="notes" placeholder="Additional notes (optional)"></textarea>
+
+        <input type="hidden" name="_subject" value="New Checkout Request">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+
+        <input type="hidden" name="cart_items" id="cartItemsField">
+        <input type="hidden" name="total_price" id="cartTotalField">
+        
+
+        <button type="submit">Submit Request</button>
+
+      </form>
+    </div>
+
+    <script src="checkout.js"></script>
+  </body>
+</html>
