@@ -259,29 +259,68 @@ body, html {
   color: #e5e5e5;
 }
 
-/* Buttons */
-.slide .content button {
-  padding: 14px 28px;
-  font-size: 17px;
+/* HERO BUTTON WRAPPER */
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* BASE BUTTON */
+.hero-buttons .btn {
+  padding: 14px 30px;
+  border-radius: 14px;
+  font-size: 16px;
   font-weight: 600;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
-  margin-right: 12px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 200px;
+  transition: all 0.25s ease;
 }
 
-/* White button */
-.slide .content button:first-of-type {
-  background: #fff;
-  color: #0a1a2a;
+/* PRIMARY BUTTON */
+.hero-buttons .btn:first-child {
+  background: #ffffff;
+  color: #0d1e50;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.18);
 }
 
-/* Transparent button */
-.slide .content button:nth-of-type(2) {
-  background: rgba(255,255,255,0.2);
-  color: #fff;
-  border: 1px solid rgba(255,255,255,0.35);
+.hero-buttons .btn:first-child:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.25);
 }
+
+/* SECONDARY BUTTON */
+.hero-buttons .btn:last-child {
+  background: rgba(255,255,255,0.15);
+  color: white;
+  border: 1.5px solid rgba(255,255,255,0.6);
+  backdrop-filter: blur(6px);
+}
+
+.hero-buttons .btn:last-child:hover {
+  background: rgba(255,255,255,0.25);
+  transform: translateY(-2px);
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 15px;
+  }
+}
+
 
 /* --- Slide Animations --- */
 @keyframes slideChange {
@@ -584,6 +623,42 @@ body, html {
 .icons button:hover {
   background: #003b92;
 }
+
+/* SEE MORE WRAPPER */
+.see-more-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+/* SEE MORE BUTTON */
+.see-more-btn {
+  padding: 14px 34px;
+  border-radius: 14px;
+  background: #001b4e;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+}
+
+.see-more-btn:hover {
+  background: #00308f;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.25);
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .see-more-btn {
+    width: 100%;
+    text-align: center;
+    margin: 0 20px;
+  }
+}
+
 .protocol-section {
   width: 100%;
   text-align: center;

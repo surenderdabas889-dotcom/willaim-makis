@@ -11,6 +11,8 @@ body {
   background-color: #f5f6fa;
   color: #333;
   padding: 20px;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 /* Page Title */
@@ -164,5 +166,94 @@ textarea {
 
   .cart-left {
     max-width: 55%;
+  }
+}
+
+@media (max-width: 768px) {
+  .cart-summary {
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .cart-left {
+    max-width: 100%;
+    font-size: 15px;
+  }
+
+  .cart-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 768px) {
+  .cart-summary {
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .cart-left {
+    max-width: 100%;
+    font-size: 15px;
+  }
+
+  .cart-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 480px) {
+  .checkout-box input,
+  .checkout-box textarea {
+    font-size: 16px; /* prevents iOS zoom */
+    padding: 14px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 14px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  .checkout-box h2 {
+    font-size: 22px;
+  }
+
+  .checkout-box .subtitle {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .checkout-box button {
+    padding: 16px;
+    font-size: 17px;
+    border-radius: 10px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .cart-summary {
+    position: sticky;
+    top: 10px;
+    z-index: 10;
   }
 }
