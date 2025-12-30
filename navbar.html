@@ -1,73 +1,113 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="navbar.css">
+    <title>Navbar</title>
   </head>
-  <body>
-    <div id="loader">
-      <div class="spinner"></div>
-    </div>
 
+  <body>
 
     <header class="navbar">
-      <div class="left-section">
+
+      <!-- Hamburger -->
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- Branding (ALWAYS visible) -->
+      <div class="brand">
         <img src="f4.jpg" alt="Profile" class="profile-img">
-        <span class="name"><a href="ivermectine.html">William Makis</a></span>
-
-          <!-- Cancer Support (Dropdown) -->
-          <div class="nav-item dropdown">
-              <i class="icon"></i>
-              Cancer Support
-              <span class="arrow">▼</span>
-
-              <div class="dropdown-menu">
-                  <a href="product-page.html">💊 Products</a>
-                  <a href="protocol-page.html">Protocols</a>
-              </div>
-          </div>
-
-          <div class="nav-item">
-              <i class="icon" h></i>
-              <a href="consultation-page.html">Consultations</a>
-          </div>
-
-          <div class="nav-item">
-              <i class="icon"></i>
-              Help Others
-          </div>
-
-          <div class="nav-item">
-              <i class="icon"></i>
-              Membership
-          </div>
-
-          <!-- Resources (Dropdown) -->
-          <div class="nav-item resources dropdown">
-              <i class="icon"></i>
-              Resources
-              <span class="arrow">▼</span>
-
-              <div class="dropdown-menu">
-                  <a href="#">About me</a>
-                  <a href="#">FAQ</a>
-                  <a href="#">Shipping</a>
-                  <a href="#">Returns</a>
-                  <a href="#">Privacy</a>
-                  <a href="#">Terms</a>
-              </div>
-          </div>
+        <span class="name">
+          <a href="index.html">William Makis</a>
+        </span>
       </div>
 
+      <!-- Sliding Menu -->
+      <nav class="nav-links" id="navLinks">
+
+        <div class="nav-item dropdown">
+          Cancer Support <span class="arrow">▼</span>
+          <div class="dropdown-menu">
+            <a href="product-page.html">💊 Products</a>
+            <a href="protocol-page.html">Protocols</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="consultation-page.html">Consultations</a>
+        </div>
+
+        <div class="nav-item">Help Others</div>
+        <div class="nav-item">Membership</div>
+
+        <div class="nav-item dropdown">
+          Resources <span class="arrow">▼</span>
+          <div class="dropdown-menu">
+            <a href="#">About me</a>
+            <a href="#">FAQ</a>
+            <a href="#">Shipping</a>
+            <a href="#">Returns</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+          </div>
+        </div>
+
+      </nav>
+
+      <!-- Right section (desktop only) -->
       <div class="right-section">
-          <div class="language">
-              <img src="uk-flag.png" class="flag"> English ▼
-          </div>
-
-          <div class="cart">
-              <i>🛒</i>
-              <span class="count">0</span>
-          </div>
+        <div class="language">
+          <img src="uk-flag.png" class="flag"> English ▼
+        </div>
+        <div class="cart">🛒 <span class="count">0</span></div>
       </div>
+
     </header>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+        const dropdowns = document.querySelectorAll(".dropdown");
+
+        if (!menuToggle || !navLinks) {
+          console.error("Navbar elements not found");
+          return;
+        }
+
+        // Hamburger toggle
+        menuToggle.addEventListener("click", (e) => {
+          e.stopPropagation();
+          navLinks.classList.toggle("active");
+        });
+
+        // Mobile dropdown toggle
+        dropdowns.forEach(dropdown => {
+          dropdown.addEventListener("click", (e) => {
+            if (window.innerWidth <= 768) {
+              e.stopPropagation();
+              dropdown.classList.toggle("open");
+            }
+          });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener("click", () => {
+          navLinks.classList.remove("active");
+        });
+
+        navLinks.addEventListener("click", (e) => {
+          e.stopPropagation();
+        });
+      });
+      menuToggle.addEventListener("click", () => console.log("clicked"));
+
+    </script>
+
+
   </body>
-</html>   
+</html>

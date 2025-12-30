@@ -1394,3 +1394,153 @@ body, html {
 #floatingCart:hover {
   background-color: #003b92;
 }
+
+/* ===========================
+   MOBILE RESPONSIVENESS
+   =========================== */
+@media (max-width: 768px) {
+
+  /* ---------- NAVBAR ---------- */
+  .navbar {
+    padding: 0 15px;
+  }
+
+  .left-section,
+  .right-section {
+    gap: 12px;
+  }
+
+  .name {
+    font-size: 16px;
+  }
+
+  /* ---------- HERO SECTION ---------- */
+  .hero-slider {
+    height: 85vh;
+  }
+
+  .slide .content {
+    left: 5%;
+    right: 5%;
+    max-width: 100%;
+  }
+
+  .slide .content h1 {
+    font-size: 34px;
+    line-height: 1.2;
+  }
+
+  .slide .content p {
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+
+  .slide .content h4 {
+    font-size: 14px;
+    padding: 6px 14px;
+  }
+
+  .slide .content button {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  /* ---------- FEATURES ---------- */
+  .features {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  /* ---------- CATEGORY GRID ---------- */
+  .category-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 90%;
+  }
+
+  .category-card {
+    height: 240px;
+  }
+
+  /* ---------- PRODUCT GRID ---------- */
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* ---------- PROTOCOLS ---------- */
+  .protocol-carousel {
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+  }
+
+  .protocol-card {
+    width: 90%;
+  }
+
+  /* ---------- CONSULTATIONS ---------- */
+  .consultation-carousel {
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+  }
+
+  .consultation-card {
+    width: 90%;
+  }
+
+  /* ---------- REVIEWS ---------- */
+  .review-carousel {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .review-card {
+    width: 90%;
+  }
+
+  /* ---------- STATS ---------- */
+  .stats-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .stat-box h2 {
+    font-size: 40px;
+  }
+
+  /* ---------- TRANSFORM SECTION ---------- */
+  .transform-section h2 {
+    font-size: 32px;
+  }
+
+  .transform-section .subtitle {
+    font-size: 16px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* ---------- FOOTER ---------- */
+  .footer-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  /* ---------- MODALS ---------- */
+  .modal-content,
+  .protocol-modal-content,
+  .consultation-modal-content {
+    width: 95%;
+    padding: 20px;
+  }
+}
+

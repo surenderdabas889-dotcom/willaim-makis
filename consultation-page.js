@@ -1,3 +1,22 @@
+// Load navbar
+fetch("navbar.html")
+  .then(res => res.text())
+  .then(data => {
+    const navbar = document.getElementById("navbar");
+    if (!navbar) return;
+    navbar.innerHTML = data;
+    initNavbar(); // 👈 IMPORTANT
+  });
+
+// Load footer
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => {
+    const footer = document.getElementById("footer");
+    if (!footer) return;
+    footer.innerHTML = data;
+  });
+
 document.addEventListener("DOMContentLoaded", () => {
 
   /* ================= CART ================= */
@@ -100,3 +119,35 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+function initNavbar() {
+  const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
+  const dropdowns = document.querySelectorAll(".dropdown");
+
+  if (!menuToggle || !navLinks) return;
+
+  // Hamburger toggle
+  menuToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    navLinks.classList.toggle("active");
+  });
+
+  // Mobile dropdown toggle
+  dropdowns.forEach(dropdown => {
+    dropdown.addEventListener("click", (e) => {
+      if (window.innerWidth <= 768) {
+        e.stopPropagation();
+        dropdown.classList.toggle("open");
+      }
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+  });
+
+  navLinks.addEventListener("click", e => e.stopPropagation());
+}
+
