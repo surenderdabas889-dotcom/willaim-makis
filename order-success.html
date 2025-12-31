@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Received</title>
+    <style>
+      body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #f5f6fa;
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+
+      .success-box {
+        background: #fff;
+        padding: 40px 30px;
+        border-radius: 14px;
+        text-align: center;
+        max-width: 420px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      }
+
+      .success-box h1 {
+        color: #001b4e;
+        margin-bottom: 15px;
+        font-size: 1.8em;
+      }
+
+      .success-box p {
+        color: #555;
+        margin-bottom: 20px;
+        line-height: 1.5;
+      }
+
+      .success-box .order-id-label {
+        font-weight: 600;
+        margin-bottom: 8px;
+        display: block;
+        color: #001b4e;
+        font-size: 1.1em;
+      }
+
+      .success-box #orderId {
+        display: inline-block;
+        font-size: 1.4em;
+        font-weight: 700;
+        color: #ff4d4f;
+        padding: 8px 16px;
+        border-radius: 6px;
+        background: #ffe6e6;
+        margin-bottom: 25px;
+      }
+
+      .success-box a {
+        display: inline-block;
+        padding: 12px 22px;
+        background: #001b4e;
+        color: white;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background 0.3s;
+      }
+
+      .success-box a:hover {
+        background: #003b92;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="success-box">
+      <h1>Request Received ✅</h1>
+      <p>
+        Thank you for your request.<br>
+        We have received your submission and you will receive a confirmation email shortly.
+      </p>
+      <span class="order-id-label">Your Order ID:</span>
+      <div id="orderId"></div>
+      <a href="index.html">Return to Home</a>
+    </div>
+
+    <script>
+      document.getElementById("orderId").innerText =
+        localStorage.getItem("lastOrderId") || "N/A";
+    </script>
+
+  </body>
+</html>

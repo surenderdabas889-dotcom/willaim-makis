@@ -17,8 +17,7 @@
     </div>
 
     <div class="checkout-container">
-      <form class="checkout-box" id="checkoutForm" action="https://formsubmit.co/hopethompson038@gmail.com"
-  method="POST">
+      <form class="checkout-box" id="checkoutForm">
 
         <h2>Checkout</h2>
         <p class="subtitle">
@@ -39,10 +38,22 @@
         <input type="hidden" name="total_price" id="cartTotalField">
         
 
-        <button type="submit">Submit Request</button>
+        <button type="submit" id="submitBtn">
+          <span class="btn-text">Submit Request</span>
+          <span class="spinner"></span>
+        </button>
 
       </form>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+    <script>
+      (function () {
+        emailjs.init("WnDKkU80OxwqA9woD");
+      })();
+    </script>
+
 
     <script src="checkout.js"></script>
   </body>

@@ -1,17 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("checkoutForm");
   const cartSummary = document.getElementById("cartSummary");
+  const submitBtn = document.getElementById("submitBtn");
 
   if (!form || !cartSummary) {
     console.error("Checkout form or cart summary not found");
     return;
   }
 
-  // Load cart from localStorage
+  // ===============================
+  // LOAD CART
+  // ===============================
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
   // ===============================
-  // RENDER CART ON CHECKOUT PAGE
+  // GENERATE ORDER ID
+  // ===============================
+  function generateOrderId() {
+    return "ORD-" + Math.random().toString(36).substr(2, 9).toUpperCase();
+  }
+
+  // ===============================
+  // RENDER CART
   // ===============================
   function renderCheckoutCart() {
     if (cart.length === 0) {
@@ -24,7 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     cart.forEach((item, index) => {
       const name = item.name || item.title || "Item";
-      const price = Number(item.price) || 0;
+      const price =
+        Number(String(item.price).replace(/[^0-9.]/g, "")) || 0;
       const qty = Number(item.quantity) || 1;
       const lineTotal = price * qty;
 
@@ -59,7 +70,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const totals = document.createElement("div");
     totals.className = "cart-totals";
-
     totals.innerHTML = `
       <hr>
       <p>Subtotal: $${subtotal.toFixed(2)}</p>
@@ -69,15 +79,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     cartSummary.appendChild(totals);
 
-    // Persist cart
     localStorage.setItem("cart", JSON.stringify(cart));
   }
 
-  // Initial render
   renderCheckoutCart();
 
   // ===============================
-  // HANDLE + / − AND REMOVE BUTTONS
+  // CART BUTTONS
   // ===============================
   cartSummary.addEventListener("click", (e) => {
     const btn = e.target;
@@ -86,15 +94,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const index = Number(btn.dataset.index);
       const action = btn.dataset.action;
 
-      if (action === "increase") {
-        cart[index].quantity += 1;
-      }
-
+      if (action === "increase") cart[index].quantity += 1;
       if (action === "decrease") {
         cart[index].quantity -= 1;
-        if (cart[index].quantity <= 0) {
-          cart.splice(index, 1);
-        }
+        if (cart[index].quantity <= 0) cart.splice(index, 1);
       }
 
       renderCheckoutCart();
@@ -108,26 +111,65 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ===============================
-  // FORM SUBMISSION (FormSubmit)
+  // FORM SUBMIT (EmailJS)
   // ===============================
-  form.addEventListener("submit", () => {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    if (cart.length === 0) {
+      alert("Your cart is empty.");
+      return;
+    }
+
+    // 🔒 Loading state ON
+    submitBtn.classList.add("loading");
+    submitBtn.disabled = true;
+
+    const orderId = generateOrderId();
     const itemsField = document.getElementById("cartItemsField");
     const totalField = document.getElementById("cartTotalField");
 
     let total = 0;
 
-    const details = cart.map(item => {
-      const name = item.name || item.title || "Item";
-      const price = Number(item.price) || 0;
-      const qty = Number(item.quantity) || 1;
+    const cartDetails = cart
+      .map((item) => {
+        const name = item.name || item.title || "Item";
+        const price =
+          Number(String(item.price).replace(/[^0-9.]/g, "")) || 0;
+        const qty = Number(item.quantity) || 1;
 
-      total += price * qty;
-      return `${name} × ${qty} ($${price})`;
-    }).join(" | ");
+        total += price * qty;
+        return `${name} × ${qty} ($${price})`;
+      })
+      .join(" | ");
 
-    itemsField.value = details || "Cart empty";
+    itemsField.value = cartDetails;
     totalField.value = `$${total.toFixed(2)}`;
 
-    console.log("SENDING CART:", itemsField.value, totalField.value);
+    const templateParams = {
+      order_id: orderId,
+      full_name: form.full_name.value,
+      email: form.email.value,
+      phone: form.phone.value,
+      notes: form.notes.value,
+      cart_items: itemsField.value,
+      total_price: totalField.value,
+    };
+
+    emailjs
+      .send("service_k3sjyzk", "template_d6jfav5", templateParams)
+      .then(() => {
+        localStorage.removeItem("cart");
+        localStorage.setItem("lastOrderId", orderId);
+        window.location.href = "order-success.html";
+      })
+      .catch((error) => {
+        console.error("EmailJS error:", error);
+        alert("❌ Failed to submit order. Try again.");
+
+        // 🔓 Restore button on error
+        submitBtn.classList.remove("loading");
+        submitBtn.disabled = false;
+      });
   });
 });

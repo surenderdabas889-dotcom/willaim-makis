@@ -257,3 +257,41 @@ textarea {
     z-index: 10;
   }
 }
+
+/* ===== LOADING SPINNER ===== */
+#submitBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+#submitBtn .spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  display: none;
+}
+
+#submitBtn.loading .spinner {
+  display: inline-block;
+}
+
+#submitBtn.loading .btn-text {
+  opacity: 0.85;
+}
+
+#submitBtn:disabled {
+  cursor: not-allowed;
+  opacity: 0.85;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+

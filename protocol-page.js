@@ -25,13 +25,13 @@ function updateCartCount() {
 // --- Protocol Data ---
 const protocols = [
     { id: 1, title: "Vaccine Detoxification Protocol", price: 2500, description: "A comprehensive detox program designed to support elimination of vaccine-related toxins. Includes supplements, guidance, and monitoring." },
-    { id: 2, title: "Parasite Detoxification Protocol", price: 3500, description: "Uses antiparasitic compounds such as ivermectin, mebendazole, and natural herbs to help clear parasites." },
-    { id: 3, title: "Complete Cancer Protocol", price: 5000, description: "High-intensity multi-agent protocol combining antiparasitics (Fenbendazole, Mebendazole, Ivermectin) and supportive supplements." },
-    { id: 4, title: "Ivermectine Protocol", price: 5000, description: "Daily or alternate-day use of ivermectin tablets (3mg or 12mg) under supervision for supportive care." },
-    { id: 5, title: "Fenbendazole Protocol", price: 5000, description: "Involves Fenbendazole (commonly 222mg daily, sometimes titrated higher) with supportive nutrition." },
-    { id: 6, title: "Mebendazole Protocol", price: 5000, description: "Uses Mebendazole (100mg tablets) as part of a cancer support regimen with nutritional guidance." },
-    { id: 7, title: "Hydroxychloroquine Protocol", price: 5000, description: "Hydroxychloroquine (200–400mg daily) for immune modulation and anti-inflammatory support." },
-    { id: 8, title: "Jo Tippens Cancer Protocol", price: 5000, description: "Combines Fenbendazole, Ivermectin, Albendazole, Serrapeptase, TUDCA, Curcumin, and other agents." }
+    { id: 2, title: "Parasite Detoxification Protocol", price: 1500, description: "Uses antiparasitic compounds such as ivermectin, mebendazole, and natural herbs to help clear parasites." },
+    { id: 3, title: "Complete Cancer Protocol", price: 4500, description: "High-intensity multi-agent protocol combining antiparasitics (Fenbendazole, Mebendazole, Ivermectin) and supportive supplements." },
+    { id: 4, title: "Ivermectine Protocol", price: 1500, description: "Daily or alternate-day use of ivermectin tablets (3mg or 12mg) under supervision for supportive care." },
+    { id: 5, title: "Fenbendazole Protocol", price: 1500, description: "Involves Fenbendazole (commonly 222mg daily, sometimes titrated higher) with supportive nutrition." },
+    { id: 6, title: "Mebendazole Protocol", price: 2500, description: "Uses Mebendazole (100mg tablets) as part of a cancer support regimen with nutritional guidance." },
+    { id: 7, title: "Hydroxychloroquine Protocol", price: 2500, description: "Hydroxychloroquine (200–400mg daily) for immune modulation and anti-inflammatory support." },
+    { id: 8, title: "Jo Tippens Cancer Protocol", price: 4500, description: "Combines Fenbendazole, Ivermectin, Albendazole, Serrapeptase, TUDCA, Curcumin, and other agents." }
 ];
 
 // --- Create Modal ---
